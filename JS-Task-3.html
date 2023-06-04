@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JS 3</title>
+  <style>
+    .row{
+        display: block;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .row input,textarea{
+        margin-left: 30px;
+    }
+    div {
+        margin-bottom: 10px;
+    }
+    label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+    }
+  </style>
+</head>
+<body>
+    <center>
+        <table>
+        <form>
+            <tr>
+                <td><div class = "row"><label>Name: </label></td>
+                <td><input type = "text" id = "Name"><span id = "nerr" style = "color: red;"></span></div></td>
+            </tr>
+            <tr>
+                <td><div class = "row"><label>Email: </label></td>
+                <td><input type = "text" id = "Email"><span id = "err" style = "color: red;"></span></div></td>
+            </tr>
+            <tr>
+                <td><div class = "row"><label>Website: </label></td>
+                <td><input type = "text" id = "Website"><span id = "werr" style = "color: red;"></span></div></td>
+            </tr>
+            <tr>
+                <td><div class = "row"><label>Message: </label></td>
+                <td><input type = "text" id = "Message"><span id = "merr" style = "color: red;"></span></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><div class = "row"><button type = "button" onclick = "validate()">Submit</button></div></td>
+            </tr>
+        </form>
+        </table>
+    </center>
+    <script>
+        function validate(){
+            var Name = document.getElementById("Name");
+            var Email = document.getElementById("Email");
+            var Website = document.getElementById("Website");
+            var Message = document.getElementById("Message");
+            if (Name.value == "") {
+                Name.style.borderColor = "red";
+                document.getElementById("nerr").innerHTML = "This field is required";
+            }
+            if (Email.value == "") {
+                Email.style.borderColor = "red";
+                document.getElementById("err").innerHTML = "A valid email address is required";
+            }
+            if (Email.value.indexOf('@')==-1) {
+                Email.style.borderColor = "red";
+                document.getElementById("err").innerHTML = "A valid email address is required";
+            }
+            if (Website.value == "") {
+                Website.style.borderColor = "red";
+                document.getElementById("werr").innerHTML = "A valid URL is required";
+            }
+            if (Website.value.indexOf(".")==-1) {
+                Website.style.borderColor = "red";
+                document.getElementById("werr").innerHTML = "A valid URL is required";
+            }
+            if (Message.value == "") {
+                Message.style.borderColor = "red";
+                document.getElementById("merr").innerHTML = "This field is required";
+            }
+        }
+    </script>
+</body>
+</html>

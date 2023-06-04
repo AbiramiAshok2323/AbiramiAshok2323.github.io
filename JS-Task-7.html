@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 7</title>
+    <style>
+        .abc{
+            margin: auto;
+            padding: 10px;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="abc">
+        <form>
+            1st Number : <input type="text" id="val1"><br><br>
+            2nd Number : <input type="text" id="val2"><br><br>
+            <input type="button" onclick="add()" value="Add" />
+            <input type="button" onclick="sub()" value="Subtract" />
+            <input type="button" onclick="mul()" value="Multiply" />
+            <input type="button" onclick="div()" value="Divide" />
+            <p>The Result is : <br><span id="result"></span></p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function getValue(val1,val2){
+        x = document.getElementById("val1").value;
+        y = document.getElementById("val2").value;
+        }
+        function add() {
+        getValue();
+        sum=Number(x)+Number(y);
+        document.getElementById('result').innerHTML = sum;
+        }
+        function sub() {
+        getValue();
+        rem=Number(x)-Number(y);
+        document.getElementById('result').innerHTML = rem;
+        }
+        function mul() {
+        getValue();
+        prod=Number(x)*Number(y);
+        document.getElementById('result').innerHTML = prod;
+        }
+        function div() {
+        getValue();
+        quo=Number(x)/Number(y);
+        document.getElementById('result').innerHTML = quo;
+        }
+    </script> 
+</body>
+</html>

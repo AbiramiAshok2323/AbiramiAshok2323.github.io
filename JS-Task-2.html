@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h3 {
+      text-align: center; 
+    }
+    p {
+      text-align: left; 
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin-right: 30px;
+    }
+    section {
+      padding: 20px;
+      display: none;
+    }
+    .navigation-buttons {
+      margin-top: 20px;
+      margin:auto;
+      width:10%;
+    }
+    .navigation-buttons button {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body><br><br>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection(1)"><h2>Page 1</h2></a></li>
+      <li><a href="#" onclick="showSection(2)"><h2>Page 2</h2></a></li>
+      <li><a href="#" onclick="showSection(3)"><h2>Page 3</h2></a></li>
+    </ul>
+  </nav>
+  <section id="section1">
+    <h3>Page 1</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin turpis magna, mollis id vehicula eu, cursus volutpat metus. Nunc velit turpis, hendrerit ut lacus sed, sollicitudin venenatis metus. Phasellus congue bibendum justo. Phasellus eu ipsum quis ipsum eleifend egestas. Etiam at tortor eros. Donec blandit lectus vitae facilisis fringilla. Donec efficitur, sem non ullamcorper ultrices, sapien nisl condimentum massa, et vehicula ante velit ut felis. Nam bibendum semper laoreet. Cras imperdiet neque at egestas rhoncus. Suspendisse ut ex lobortis, aliquam libero eget, pulvinar erat. Vivamus vitae luctus arcu, sed mattis erat. Sed finibus suscipit est. Donec non purus lectus. Curabitur vel luctus leo. Sed aliquet enim nibh, vitae viverra purus mollis et. Aliquam orci ipsum, aliquam a ipsum eget, vehicula tristique diam.</p>
+    <div class="navigation-buttons">
+      <button onclick="showSection(3)">Previous Page</button><br><br>
+      <button onclick="showSection(2)">Next Page</button>
+    </div>
+  </section>
+  <section id="section2">
+    <h3>Page 2</h3>
+    <p>Ut fermentum eros erat, sed mollis diam volutpat sed. Ut eu efficitur leo, eget ultricies tellus. In at interdum lorem. Nulla eget dolor fermentum, mattis tortor vitae, interdum felis. Mauris at tortor faucibus, iaculis urna et, rutrum justo. Maecenas dictum, arcu eu viverra consequat, sem ligula cursus magna, sit amet cursus ligula libero a diam. Aliquam nec tempor est. Curabitur hendrerit, elit at pretium aliquet, nisi erat maximus elit, hendrerit pretium ipsum nulla et erat. Nam ac fringilla eros.</p>
+    <div class="navigation-buttons">
+      <button onclick="showSection(1)">Previous Page</button><br><br>
+      <button onclick="showSection(3)">Next Page</button>
+    </div>
+  </section>
+  <section id="section3">
+    <h3>Page 3</h3>
+    <p>Phasellus vehicula auctor mauris, eget egestas lectus. Praesent eget nisl eu augue consequat imperdiet. Aliquam commodo eros rhoncus gravida cursus. Nam id magna elit. Integer eu nisi rutrum, maximus lorem vel, bibendum tellus. In ut convallis purus. Fusce elit elit, suscipit ac feugiat vitae, posuere interdum turpis. Fusce eleifend bibendum neque. Aliquam tempus laoreet diam eget eleifend. Integer aliquet enim id turpis varius, quis mollis elit condimentum. Nam volutpat ultricies tortor. Etiam quis efficitur ex. Sed leo sapien, porta condimentum nulla eu, consequat rutrum felis.</p>
+    <div class="navigation-buttons">
+      <button onclick="showSection(2)">Previous Page</button><br><br>
+      <button onclick="showSection(1)">Next Page</button>
+    </div>
+  </section>
+  <script>
+    function showSection(sectionNumber) {
+      var sections = document.querySelectorAll('section');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+      var selectedSection = document.querySelector('#section' + sectionNumber);
+      selectedSection.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

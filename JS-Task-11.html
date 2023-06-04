@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS 11</title>
+  <script>
+    function validateForm() {
+      var fname = document.getElementById("fname").value;
+      var lname = document.getElementById("lname").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var repassword = document.getElementById("repassword").value;
+      var age = document.getElementById("age").value;
+      var phone = document.getElementById("phone").value;
+      var address = document.getElementById("address").value;
+      var state = document.getElementById("state").value;
+      var country = document.getElementById("country").value;
+      var declaration = document.getElementById("declaration").checked;
+      if (fname === "") {
+        alert("POOR");
+        return false;
+      }
+      if (lname === "") {
+        alert("POOR");
+        return false;
+      }
+      if (email === "") {
+        alert("POOR");
+        return false;
+      }
+      if (password.length < 8) {
+        alert("POOR");
+        return false;
+      }
+      if (password !== repassword) {
+        alert("POOR OR MISMATCH");
+        return false;
+      }
+      if (age === "") {
+        alert("POOR");
+        return false;
+      }
+      if (phone === "") {
+        alert("POOR");
+        return false;
+      }
+      if (address === "") {
+        alert("POOR");
+        return false;
+      }
+      if (state === "") {
+        alert("POOR");
+        return false;
+      }
+      if (country === "") {
+        alert("Please select your Country.");
+        return false;
+      }
+      if (!declaration) {
+        alert("Please declare that all the given details are true.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body background = "JS-Task-11_img.jpg">
+  <h2 style="color: blue; text-align: center;">Registration form</h2>
+  <form onsubmit="return validateForm()" style="position: relative; float:right; right:500px;">
+    <table>
+      <tr >
+        <td><label for="fname"><b>First Name</b></label></td>
+        <td><input type="text" size="40px" id="fname" name="fname" required></td>
+      </tr>
+      <tr>
+        <td><label for="lname"><b>Last Name</b></label></td>
+        <td><input type="text" size="40px" id="lname"   name="lname" required></td>
+      </tr>
+      <tr>
+        <td><label for="email"><b>Email</b></label></td>
+        <td><input type="email" size="40px" id="email"  name="email" required></td>
+      </tr>
+      <tr>
+        <td><label for="password"><b>Password</b></label></td>
+        <td><input type="password" size="40px" id="password"  name="password" required></td>
+      </tr>
+      <tr>
+        <td><label for="repassword"><b>Re-enter Password</b></label></td>
+        <td><input type="password" size="40px" id="repassword"  name="repassword" required></td>
+      </tr>
+      <tr>
+        <td><label for="gender"><b>Gender</b></label></td>
+        <td>
+            <input type="radio" name="val" checked>
+            <label for="gender">Male</label>
+            <input type="radio" name="val">
+            <label for="gender">Female</label>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="age"><b>Age</b></label></td>
+        <td><input type="text" size="40px" id="age"  name="age" required></td>
+      </tr>
+      <tr>
+        <td><label for="phone"><b>Phone Number</b></label></td>
+        <td><input type="tel" size="40px" id="phone"  name="phone" required></td>
+      </tr>
+      <tr>
+        <td><label for="address"><b>Address</b></label></td>
+        <td><textarea id="address" cols="38px" name="address"  rows="4" cols="20" required></textarea></td>
+      </tr>
+      <tr>
+        <td><label for="state"><b>State</b></label></td>
+        <td><input type="text" size="40px" id="state" name="state" required></td>
+      </tr>
+      <tr>
+        <td><label for="country"><b>Country</b></label></td>
+        <td>
+          <select id="country" name="country" required>
+            <option value="">Choose your country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">UK</option>
+            <option value="UK">India</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <label for="language"><b>Languages known</b></label></td>
+        <td>
+            <input type="checkbox">
+            <label for="language">English</label>
+            <input type="checkbox">
+            <label for="language">Kannada</label>
+            <input type="checkbox">
+            <label for="language">Hindi</label>
+            <input type="checkbox">
+            <label for="language">Telugu</label>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="checkbox" id="declaration" name="declaration" required checked>
+          <label for="declaration">Hereby I declare all the given details are true</label>
+        </td>
+      </tr>
+      <tr>
+        <td style="border:none;" colspan="2" style="text-align: right ;">
+         <span style="position: relative; float:right;">Log in to <a href="https://codemithra.com">Ethnus</a> website</span>
+        </td>
+      </tr>
+    </table><br>
+    <center><input style="border-radius:20px; background-color: red; color:white; padding: 10px;" type="submit" value="REGISTER"></center>
+  </form>
+</body>
+</html>
