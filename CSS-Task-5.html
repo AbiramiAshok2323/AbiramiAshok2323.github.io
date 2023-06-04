@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS 5</title>
+<style>
+  div{
+            margin: auto;
+            width: 75%;
+            border: 1px solid;
+            padding: 5px;
+            border-color: black;
+        }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightgray;
+  width: 45%;
+}
+li {
+  float: left;
+  border-right:1px solid blue;
+}
+li:last-child {
+  border-right: none;
+}
+li a {
+  display: block;
+  color: blue;
+  text-align: center;
+  padding: 14px 12px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: white;
+  color: black;
+}
+.active {
+  background-color: darkgrey;
+  color: white;
+}
+.none {
+    background-color: lightgrey;
+    color: lightgrey;
+}
+</style>
+</head>
+<body>
+<h5><center>Horizontal Navigation Bar</center></h5>
+<div><center><ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#java">Java</a></li>
+    <li><a href="#html">HTML</a></li>
+    <li><a href="#css">CSS</a></li>
+    <li><a class="none" href="#bootstrap">Bootstrap</a></li>
+</ul></center></div>
+</body>
+</html>
