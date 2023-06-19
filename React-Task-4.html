@@ -1,0 +1,62 @@
+<html>
+<head>
+   <style>
+      table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse; 
+      }
+      td, th {
+         padding: 10px;
+      }
+   </style>
+   <title>React 4</title>
+</head>
+<body><center>
+   <button id="btn" onclick="convert( )">Click here to convert JSON data into table</button><br><br>
+   <div id="container"></div></center>
+   <script>
+      function convert() {
+         let jsonData = [
+            {
+               Name: "Terry",
+               Age: 50,
+               City: "Washington"
+            },
+            {
+               Name: "Sheldon",
+               Age: 28,
+               City: "Louisville"
+            },
+            {
+               Name: "Terrill",
+               Age: 38,
+               City: "Grass Valley"
+            }
+         ];
+         let container = document.getElementById("container");
+         let table = document.createElement("table");
+         let cols = Object.keys(jsonData[0]);
+         let thead = document.createElement("thead");
+         let tr = document.createElement("tr");
+         cols.forEach((item) => {
+            let th = document.createElement("th");
+            th.innerText = item;
+            tr.appendChild(th); 
+         });
+         thead.appendChild(tr); 
+         table.append(tr) 
+         jsonData.forEach((item) => {
+            let tr = document.createElement("tr");
+            let vals = Object.values(item);
+            vals.forEach((elem) => {
+               let td = document.createElement("td");
+               td.innerText = elem; 
+               tr.appendChild(td); 
+            });
+            table.appendChild(tr); 
+         });
+         container.appendChild(table) 
+      }
+   </script>
+</body>
+</html>

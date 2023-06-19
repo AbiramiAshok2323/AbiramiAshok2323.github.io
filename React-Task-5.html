@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>React 5</title>
+<script>
+function ageCalculator() {
+    var userinput = document.getElementById("DOB").value;
+    var dob = new Date(userinput);
+    if(userinput==null || userinput=='') {
+      document.getElementById("message").innerHTML = "**Choose a date please!";  
+      return false; 
+    } else {
+    var month_diff = Date.now() - dob.getTime();
+    var age_dt = new Date(month_diff);     
+    var year = age_dt.getUTCFullYear();
+    var age = Math.abs(year - 1970);
+    return document.getElementById("result").innerHTML =  
+             "You are " + age + " years old";
+    }
+}
+</script>
+</head>
+<body>
+<center>
+<h1>Age Calculator<br></h1> 
+<h3>Enter your date of birth</h3>
+<input type = date id = DOB>
+<span id = "message" style = "color:red"> </span> <br><br>  
+<button type = "submit" onclick = "ageCalculator()"> Calculate Age </button> <br><br>
+<h3 id = "result"></h3> 
+</center>
+</body>
+</html>
